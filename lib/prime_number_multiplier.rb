@@ -36,14 +36,16 @@ class PrimeNumberMultiplier
     print_top_row!.gsub(/./, '-')
   end
 
-  def print_row!(multiplier, contents)
-    multiplier.to_s.rjust(left_column_width) + " |" + print_contents!(contents)
+  def print_row!(row_number)
+    @left_column[row_number].to_s.rjust(left_column_width) +
+      " |" +
+      print_contents!(@output[row_number])
   end
 
   def print_output!
     lines = [print_top_row!, print_divider_row!]
     @left_column.each_with_index {|multiplier, row|
-      lines << print_row!(multiplier, @output[row])
+      lines << print_row!(row)
     }
     lines.join("\n")
   end

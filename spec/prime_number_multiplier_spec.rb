@@ -46,12 +46,12 @@ describe 'PrimeNumberMultiplier' do
     end
 
     it 'can print a row given a multiplier and contents' do
-      multiplier.print_row!(2, [4, 6, 10, 14, 22, 26, 34, 38, 46, 58])
+      multiplier.print_row!(0)
         .should == " 2 |  4  6  10  14  22  26  34  38  46  58"
     end
 
     it 'can correctly justify the number on the left' do
-      multiplier.print_row!(29, [58, 87, 145, 203, 319, 377, 493, 551, 667, 841])
+      multiplier.print_row!(9)
         .should == "29 | 58 87 145 203 319 377 493 551 667 841"
     end
 
