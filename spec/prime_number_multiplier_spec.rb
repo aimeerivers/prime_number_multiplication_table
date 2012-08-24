@@ -82,6 +82,12 @@ describe 'PrimeNumberMultiplier' do
       ]
     end
 
+    it 'does not break if given strings' do
+      multiplier = PrimeNumberMultiplier.new('2', '2')
+      multiplier.top_row.size.should == 2
+      multiplier.left_column.size.should == 2
+    end
+
   end
 
 end

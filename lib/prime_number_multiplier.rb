@@ -5,8 +5,8 @@ class PrimeNumberMultiplier
   attr_reader :top_row, :left_column, :output
 
   def initialize(x=10, y=10)
-    @top_row = Prime.take x
-    @left_column = Prime.take y
+    @top_row = Prime.take x.to_i
+    @left_column = Prime.take y.to_i
     @output = @left_column.reduce([]) {|output, multiplier|
       output << @top_row.map {|value| multiplier * value }
     }
