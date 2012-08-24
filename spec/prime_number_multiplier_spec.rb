@@ -57,4 +57,31 @@ describe 'PrimeNumberMultiplier' do
 
   end
 
+  context 'initializing with a different number for the axes' do
+
+    it 'can change the top row' do
+      PrimeNumberMultiplier.new(5).top_row.size.should == 5
+    end
+
+    it 'can change the left column' do
+      PrimeNumberMultiplier.new(10, 6).left_column.size.should == 6
+    end
+
+    it 'multiplies the output' do
+      PrimeNumberMultiplier.new(3, 3).output.should == [
+        [4, 6, 10],
+        [6, 9, 15],
+        [10, 15, 25]
+      ]
+    end
+
+    it 'does not have to be a square' do
+      PrimeNumberMultiplier.new(4, 2).output.should == [
+        [4, 6, 10, 14],
+        [6, 9, 15, 21]
+      ]
+    end
+
+  end
+
 end
